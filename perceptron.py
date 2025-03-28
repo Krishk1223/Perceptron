@@ -1,7 +1,7 @@
 import numpy as np
 
 class Perceptron:
-    def __init__(self, input_size, alpha=0.01, decay_rate = 0, epochs = 100):
+    def __init__(self, input_size, alpha=0.01, decay_rate = 0, epochs = 100, patience = 5):
         self.alpha = alpha # learning rate for model
         self.initial_alpha = alpha #initial alpha useful for resetting the learning rate
         self.epochs = epochs #number of iterations to run the model for
@@ -11,6 +11,8 @@ class Perceptron:
             "epoch_error": [],
             "accuracies": []
         }
+        self.patience = patience
+
     def decay_learning(self, epoch):
         """
         Calculates value of the learning rate via exponential decay rate at the given epoch if the decay rate is non zero.
@@ -50,7 +52,7 @@ class Perceptron:
         x = np.insert(x,0,1) #adds a bias term of 1 at the start to account for w0 (creating input as [1,x1,x2...])
         return self.step_function(np.dot(self.weights, x)) #returns the step up activation value
 
-    def fit(self, X_train, Y_train, X_validation = None, Y_validation = None, patience = 5):
+    def fit(self, X_train, Y_train, X_validation = None, Y_validation = None):
         """
          This function trains the perceptron model on the inputs and their respective labels.
          Can also use a validation data set to further validate the training data and uses early stoppage to prevent overfitting 
@@ -75,7 +77,7 @@ class Perceptron:
             raise ValueError("Training data labels should only be 0 or 1")
 
         best_validation_accuracy = 0 #track best accuracy encountered
-        stopping_patience = patience #how many epochs of no improvement before early stopping
+        stopping_patience = self.patience #how many epochs of no improvement before early stopping
         no_improvement_count = 0 #counting how many epochs of no improvement
     
         for i in range(self.epochs):
