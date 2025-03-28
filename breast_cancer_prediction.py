@@ -20,7 +20,7 @@ X_validation = scaler.fit_transform(X_validation)
 X_test = scaler.fit_transform(X_test)
 
 #perceptron initialisation and training
-perceptron = Perceptron(input_size = X_train.shape[1], epochs = 1000, alpha= 0.01, decay_rate=0.001, patience= 21)
+perceptron = Perceptron(input_size = X_train.shape[1], epochs = 1000, alpha= 0.01, decay_rate=0.001, patience= 5)
 perceptron.fit(X_train, Y_train, X_validation, Y_validation)
 
 #prediction accuracy test
