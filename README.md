@@ -10,4 +10,5 @@ The Perceptron is a type of artificial neural network and one of the simplest fo
 
 - `perceptron.py`: Contains the implementation of the Perceptron model.
 - `requirements.txt`: Lists the dependencies required to run the project.
+- `breast_cancer_prediction`: Uses perceptron model and scikit learn's breast cancer dataset to predict patients with breast cancer. 
 
