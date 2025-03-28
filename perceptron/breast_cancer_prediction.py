@@ -32,7 +32,3 @@ def main():
     percentage = accuracy*100
     print(f"Perceptron accuracy in predicting breast cancer: {
           percentage:.2f} %")
-
-
-if __name__ == "__main__":
-    main()
