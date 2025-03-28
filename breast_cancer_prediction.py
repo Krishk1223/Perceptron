@@ -1,5 +1,5 @@
 import numpy as np
-from sklearn.datasets import load_breast_cancergi
+from sklearn.datasets import load_breast_cancer
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from perceptron import Perceptron
@@ -20,7 +20,7 @@ X_validation = scaler.fit_transform(X_validation)
 X_test = scaler.fit_transform(X_test)
 
 #perceptron initialisation and training
-perceptron = Perceptron(input_size = X_train.shape[1], epochs = 1000, alpha= 0.01, decay_rate=0.001, patience= 10)
+perceptron = Perceptron(input_size = X_train.shape[1], epochs = 1000, alpha= 0.01, decay_rate=0.001, patience= 21)
 perceptron.fit(X_train, Y_train, X_validation, Y_validation)
 
 #prediction accuracy test
