@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Perceptron"
+dynamic = ["version"]
+description = "An implementation of a Perceptron model in Python."
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "Krishk1223" }]
+dependencies = [
+    "numpy",
+    "scikit-learn",
+]
+
+[project.scripts]
+bcp = "perceptron.breast_cancer_prediction:main"
