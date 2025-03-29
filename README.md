@@ -14,5 +14,5 @@ Early stoppage is also implemented to prevent overfitting, the user can choose t
 
 - `perceptron.py`: Contains the implementation of the Perceptron model.
 - `pyproject.toml`: Lists the dependencies required to run the project.
-- `breast_cancer_prediction`: Uses perceptron model and scikit learn's breast cancer dataset to predict patients with breast cancer. 
+- `breast_cancer_prediction.py`: Uses perceptron model and scikit learn's breast cancer dataset to predict patients with breast cancer. Then lists out the model accuracy as a percentage.
 
